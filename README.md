@@ -39,6 +39,6 @@ La API queda en `http://localhost:8080`.
 ## Estado del proyecto
 
 - [x] Proyecto Spring Boot con conexión a MySQL
-- [ ] Entidad `Tarea` y API REST
+- [x] Entidad `Tarea` y API REST
 - [ ] Frontend Angular
 - [ ] Autenticación JWT
