@@ -1,0 +1,45 @@
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Tarea } from '../tarea.model';
+import { TareaService } from '../tarea.service';
+
+@Component({
+  selector: 'app-tarea-list',
+  imports: [],
+  templateUrl: './tarea-list.html',
+  styleUrl: './tarea-list.css',
+})
+export class TareaList implements OnInit {
+  private readonly tareaService = inject(TareaService);
+  private readonly destroyRef = inject(DestroyRef);
+
+  tareas = signal<Tarea[]>([]);
+  cargando = signal(false);
+  error = signal('');
+
+  ngOnInit(): void {
+    this.cargar();
+  }
+
+  cargar(): void {
+    this.cargando.set(true);
+    this.error.set('');
+    this.tareaService.getAll().pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
+      next: (tareas) => {
+        this.tareas.set(tareas);
+        this.cargando.set(false);
+      },
+      error: () => {
+        this.error.set('No se pudieron cargar las tareas.');
+        this.cargando.set(false);
+      },
+    });
+  }
+
+  borrar(id: number): void {
+    this.tareaService.delete(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
+      next: () => this.cargar(),
+      error: () => this.error.set('No se pudo borrar la tarea.'),
+    });
+  }
+}
