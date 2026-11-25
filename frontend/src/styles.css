@@ -1,1 +1,76 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+/* Catppuccin Macchiato sobre el modo oscuro de Bootstrap */
+[data-bs-theme="dark"] {
+  --bs-body-bg: #24273a;
+  --bs-body-bg-rgb: 36, 39, 58;
+  --bs-body-color: #cad3f5;
+  --bs-body-color-rgb: 202, 211, 245;
+  --bs-emphasis-color: #cad3f5;
+  --bs-secondary-color: #a5adcb;
+  --bs-tertiary-bg: #1e2030;
+  --bs-border-color: #494d64;
+  --bs-link-color: #8aadf4;
+  --bs-form-invalid-color: #ed8796;
+  --bs-form-invalid-border-color: #ed8796;
+}
+
+.card,
+.list-group {
+  --bs-card-bg: #1e2030;
+  --bs-list-group-bg: #1e2030;
+}
+
+.form-control {
+  --bs-body-bg: #363a4f;
+}
+
+.btn-primary {
+  --bs-btn-bg: #8aadf4;
+  --bs-btn-border-color: #8aadf4;
+  --bs-btn-color: #24273a;
+  --bs-btn-hover-bg: #7dc4e4;
+  --bs-btn-hover-border-color: #7dc4e4;
+  --bs-btn-hover-color: #24273a;
+  --bs-btn-active-bg: #7dc4e4;
+  --bs-btn-active-border-color: #7dc4e4;
+  --bs-btn-active-color: #24273a;
+}
+
+.btn-secondary {
+  --bs-btn-bg: #5b6078;
+  --bs-btn-border-color: #5b6078;
+  --bs-btn-color: #cad3f5;
+  --bs-btn-hover-bg: #6e738d;
+  --bs-btn-hover-border-color: #6e738d;
+  --bs-btn-hover-color: #cad3f5;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #8aadf4;
+  --bs-btn-border-color: #8aadf4;
+  --bs-btn-hover-bg: #8aadf4;
+  --bs-btn-hover-border-color: #8aadf4;
+  --bs-btn-hover-color: #24273a;
+  --bs-btn-active-bg: #8aadf4;
+  --bs-btn-active-border-color: #8aadf4;
+  --bs-btn-active-color: #24273a;
+}
+
+.btn-outline-danger {
+  --bs-btn-color: #ed8796;
+  --bs-btn-border-color: #ed8796;
+  --bs-btn-hover-bg: #ed8796;
+  --bs-btn-hover-border-color: #ed8796;
+  --bs-btn-hover-color: #24273a;
+  --bs-btn-active-bg: #ed8796;
+  --bs-btn-active-border-color: #ed8796;
+  --bs-btn-active-color: #24273a;
+}
+
+.alert-danger {
+  --bs-alert-bg: #363a4f;
+  --bs-alert-border-color: #ed8796;
+  --bs-alert-color: #ed8796;
+}

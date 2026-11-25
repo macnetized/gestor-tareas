@@ -1,1 +1,11 @@
-<button class="btn btn-primary m-3">Prueba de Bootstrap</button>
+<div class="container py-4">
+  <h1 class="mb-4">Gestor de Tareas</h1>
+
+  <app-tarea-form
+    [tarea]="tareaEditando()"
+    (guardada)="alGuardar()"
+    (cancelada)="alCancelar()"
+  />
+
+  <app-tarea-list (editar)="editar($event)" />
+</div>

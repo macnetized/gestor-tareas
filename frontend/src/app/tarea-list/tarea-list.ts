@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, output, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Tarea } from '../tarea.model';
 import { TareaService } from '../tarea.service';
@@ -16,6 +16,7 @@ export class TareaList implements OnInit {
   tareas = signal<Tarea[]>([]);
   cargando = signal(false);
   error = signal('');
+  editar = output<Tarea>();
 
   ngOnInit(): void {
     this.cargar();
