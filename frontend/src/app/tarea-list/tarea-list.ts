@@ -17,6 +17,7 @@ export class TareaList implements OnInit {
   cargando = signal(false);
   error = signal('');
   editar = output<Tarea>();
+  borrada = output<number>();
 
   ngOnInit(): void {
     this.cargar();
@@ -39,7 +40,10 @@ export class TareaList implements OnInit {
 
   borrar(id: number): void {
     this.tareaService.delete(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
-      next: () => this.cargar(),
+        next: () => {
+          this.borrada.emit(id);
+          this.cargar();
+      },
       error: () => this.error.set('No se pudo borrar la tarea.'),
     });
   }

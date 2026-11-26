@@ -12,8 +12,8 @@
   --bs-tertiary-bg: #1e2030;
   --bs-border-color: #494d64;
   --bs-link-color: #8aadf4;
-  --bs-form-invalid-color: #ed8796;
-  --bs-form-invalid-border-color: #ed8796;
+  --bs-form-invalid-color: #ee99a0;
+  --bs-form-invalid-border-color: #ee99a0;
 }
 
 .card,
@@ -59,18 +59,18 @@
 }
 
 .btn-outline-danger {
-  --bs-btn-color: #ed8796;
-  --bs-btn-border-color: #ed8796;
-  --bs-btn-hover-bg: #ed8796;
-  --bs-btn-hover-border-color: #ed8796;
+  --bs-btn-color: #ee99a0;
+  --bs-btn-border-color: #ee99a0;
+  --bs-btn-hover-bg: #ee99a0;
+  --bs-btn-hover-border-color: #ee99a0;
   --bs-btn-hover-color: #24273a;
-  --bs-btn-active-bg: #ed8796;
-  --bs-btn-active-border-color: #ed8796;
+  --bs-btn-active-bg: #ee99a0;
+  --bs-btn-active-border-color: #ee99a0;
   --bs-btn-active-color: #24273a;
 }
 
 .alert-danger {
   --bs-alert-bg: #363a4f;
-  --bs-alert-border-color: #ed8796;
-  --bs-alert-color: #ed8796;
+  --bs-alert-border-color: #ee99a0;
+  --bs-alert-color: #ee99a0;
 }

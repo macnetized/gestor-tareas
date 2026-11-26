@@ -13,17 +13,32 @@ export class App {
   protected readonly title = signal('frontend');
   protected readonly lista = viewChild.required(TareaList);
   protected readonly tareaEditando = signal<Tarea | null>(null);
+  protected readonly mostrarFormulario = signal(false);
+
+  protected nuevaTarea(): void {
+    this.tareaEditando.set(null);
+    this.mostrarFormulario.set(true);
+  }
 
   protected editar(tarea: Tarea): void {
     this.tareaEditando.set(tarea);
+    this.mostrarFormulario.set(true);
   }
 
   protected alGuardar(): void {
     this.tareaEditando.set(null);
+    this.mostrarFormulario.set(false);
     this.lista().cargar();
   }
 
   protected alCancelar(): void {
     this.tareaEditando.set(null);
+    this.mostrarFormulario.set(false);
+  }
+
+  protected alBorrar(id: number): void {
+    if (this.tareaEditando()?.id === id) {
+      this.alCancelar();
+    }
   }
 }
