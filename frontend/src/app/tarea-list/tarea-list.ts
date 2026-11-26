@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnInit, output, signal } from '@angular/core';
+import { Component, DestroyRef, inject, input, OnInit, output, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Tarea } from '../tarea.model';
 import { TareaService } from '../tarea.service';
@@ -18,6 +18,7 @@ export class TareaList implements OnInit {
   error = signal('');
   editar = output<Tarea>();
   borrada = output<number>();
+  editandoId = input<number | null>(null);
 
   ngOnInit(): void {
     this.cargar();
@@ -40,9 +41,9 @@ export class TareaList implements OnInit {
 
   borrar(id: number): void {
     this.tareaService.delete(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
-        next: () => {
-          this.borrada.emit(id);
-          this.cargar();
+      next: () => {
+        this.borrada.emit(id);
+        this.cargar();
       },
       error: () => this.error.set('No se pudo borrar la tarea.'),
     });

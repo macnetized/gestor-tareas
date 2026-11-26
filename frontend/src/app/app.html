@@ -16,5 +16,9 @@
     />
   }
 
-  <app-tarea-list (editar)="editar($event)" (borrada)="alBorrar($event)" />
+  <app-tarea-list
+    [editandoId]="tareaEditando()?.id ?? null"
+    (editar)="editar($event)"
+    (borrada)="alBorrar($event)"
+  />
 </div>

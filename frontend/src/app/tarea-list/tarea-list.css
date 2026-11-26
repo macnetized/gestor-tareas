@@ -1,0 +1,8 @@
+.tarea-editando {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 10px,
+    rgba(138, 173, 244, 0.08) 10px 20px
+  );
+  box-shadow: inset 4px 0 0 #8aadf4;
+}
